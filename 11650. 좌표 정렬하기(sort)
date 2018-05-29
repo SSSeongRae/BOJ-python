@@ -1,0 +1,12 @@
+n=int(input())
+k=[]
+for i in range(n):
+    a,b=map(int,input().split())
+    k.append([a,b])
+    
+k.sort()
+for i in range(n):
+    print(k[i][0],end=' ')
+    print(k[i][1])
+    
+ #문제 https://www.acmicpc.net/submit/11650
