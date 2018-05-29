@@ -1,0 +1,32 @@
+#  6    10    13    9    8   1
+# n-4   n-3   n-2  n-1  n   n+1
+
+# max(n-2)+ list(n) ,  max(n-3)+list(n-1)+list(n) , max(n-1)
+
+list1=[]
+result=0
+n=int(input())
+for i in range(n):
+    list1.append(int(input()))
+
+
+if n==1:
+    result=list1[-1]
+    
+elif n==2:
+    result=list1[0]+list1[1]
+elif n==3:
+    result=max(list1[0]+list1[1],list1[0]+list1[2],list1[1]+list1[2])    
+    
+    
+else:
+    max1=[list1[0],list1[0]+list1[1],max(list1[0]+list1[1],list1[0]+list1[2],list1[1]+list1[2])]
+    for i in range(3,n):
+        max1.append(max(max1[i-2]+list1[i],max1[i-3]+list1[i-1]+list1[i],max1[i-1]))
+    
+    result=max1[-1]
+    
+print(result)
+        
+
+#문제 https://www.acmicpc.net/problem/2156
