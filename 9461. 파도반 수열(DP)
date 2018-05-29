@@ -1,0 +1,12 @@
+for i in range(int(input())):
+    l_1=[1,1,1,2,2]
+    n=int(input())
+
+    if n>5:
+        for i in range(n-5):
+            l_1.append((l_1[i]+l_1[i+4]))
+        print(l_1[n-1])
+    else:
+         print(l_1[n-1])
+         
+  #문제 https://www.acmicpc.net/submit/9461
