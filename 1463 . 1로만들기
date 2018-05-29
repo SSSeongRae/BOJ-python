@@ -1,0 +1,31 @@
+a=int(input())
+a_1=[a]
+count=0
+
+def tem(k):
+        new_list=[]
+        for i in k:
+            new_list.append(i-1)
+            if i % 2==0 :
+                new_list.append(i//2)
+            if i % 3==0 :
+                new_list.append(i//3)
+    
+        return new_list
+
+while True:
+    
+    if a == 1:
+        print(count)
+        break
+    a_2=a_1[:]
+    a_1=[]
+    a_1=tem(a_2)
+    count+=1
+    
+    if min(a_1)==1:
+        print(count)
+        break
+        
+    
+# 문제 https://www.acmicpc.net/problem/1463
