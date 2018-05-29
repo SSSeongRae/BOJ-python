@@ -1,0 +1,15 @@
+n=int(input())
+for i in range(n):
+    n_1=int(input())
+    k_1=list(map(int,input().split()))
+    k_2=list(map(int,input().split()))
+    
+    max1=[k_1[0],k_2[0]+k_1[1]]
+    max2=[k_2[0],k_1[0]+k_2[1]]
+    for j in range(n_1-2):
+        max1.append(max(max2[j],max2[j+1])+k_1[j+2])
+        max2.append(max(max1[j],max1[j+1])+k_2[j+2])
+    
+    print(max(max1[-1],max2[-1]))
+    
+   #문제 https://www.acmicpc.net/submit/9465
