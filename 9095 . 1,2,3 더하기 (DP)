@@ -1,0 +1,9 @@
+dp=[1,1,2]
+for i in range(100):
+    dp.append(dp[i]+dp[i+1]+dp[i+2])
+n= int(input())
+for i in range(n):
+    k=int(input())
+    print(dp[k])
+    
+#문제 https://www.acmicpc.net/submit/9095
