@@ -1,0 +1,54 @@
+def find(L):
+    global visit,Case,n
+    k_1=[]
+    if L[0]-1>=0 and not visit[L[0]-1][L[1]] and Case[L[0]-1][L[1]]:
+        k_1.append([L[0]-1,L[1]])
+    if L[1]-1>=0 and not visit[L[0]][L[1]-1] and Case[L[0]][L[1]-1]:
+        k_1.append([L[0],L[1]-1])
+    if L[0]+1<=n-1 and not visit[L[0]+1][L[1]] and Case[L[0]+1][L[1]]:
+        k_1.append([L[0]+1,L[1]])
+    if L[1]+1<=n-1 and not visit[L[0]][L[1]+1] and Case[L[0]][L[1]+1]:
+        k_1.append([L[0],L[1]+1])
+    return k_1
+    
+        
+
+def bfs(L):
+    if L:
+        global visit,Case,count,number
+        L1=[]
+        for j in L:
+            if Case[j[0]][j[1]]==1:
+                visit[j[0]][j[1]]=number  # 마킹
+                L1+=find([j[0],j[1]])
+        bfs(L1)
+
+        
+
+n=int(input())
+visit=[[0 for i in range(n) ] for i in range(n)]
+count=0
+Case=[]
+number=1
+for i in range(n):
+    Case.append(list(map(int,input())))
+for j_1 in range(n):
+    for j_2 in range(n):
+        if Case[j_1][j_2]==1 and not visit[j_1][j_2]:
+            bfs([[j_1,j_2]])
+            number+=1
+
+        
+print(number-1)
+count_1=[0]*number
+for i in range(n):
+    for j in range(n):
+        count_1[visit[i][j]]+=1
+        
+count_1=count_1[1:]
+count_1.sort()
+for i in count_1:
+    print(i)
+    
+    
+# 문제 https://www.acmicpc.net/problem/2667
