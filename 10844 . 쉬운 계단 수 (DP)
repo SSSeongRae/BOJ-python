@@ -1,0 +1,16 @@
+l_1=[[0,1,1,1,1,1,1,1,1,1]]
+n=int(input())
+for i in range(n):
+    l_2=[]
+    l_2.append(l_1[i][1])
+    for j in range(8):
+        l_2.append(l_1[i][j]+l_1[i][j+2])
+    l_2.append(l_1[i][8])
+    l_1.append(l_2)
+result=0
+for i in l_1[n-1]:
+    result+=int(i)
+    
+print(result%1000000000)    
+
+# https://www.acmicpc.net/problem/10844
