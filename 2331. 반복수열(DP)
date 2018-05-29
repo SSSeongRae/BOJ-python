@@ -1,0 +1,16 @@
+n,p=input().split()
+n_1=list(n)
+k=[int(n)]
+value=0
+while True:
+    for i in n_1:
+        value+=pow(int(i),int(p))
+    if value not in k:
+        k.append(value)    
+        n_1=list(str(value))
+        value=0
+    else:
+        break
+print(len(k[:k.index(value)]))
+
+#문제 https://www.acmicpc.net/submit/2331
