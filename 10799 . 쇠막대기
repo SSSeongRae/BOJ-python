@@ -1,0 +1,20 @@
+case=input()
+stack=0
+result=0
+j=0
+for i in case:
+    if i =='(':
+        stack+=1
+        j='('
+    elif i ==')':
+        if j=='(':
+            stack-=1
+            result= result+stack       
+        elif j==')':
+            result+=1
+            stack-=1          
+        j=')'
+            
+print(result)
+
+# 문제 https://www.acmicpc.net/problem/10799
