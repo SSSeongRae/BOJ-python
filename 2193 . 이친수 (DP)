@@ -1,0 +1,14 @@
+l_1=[[0,1]]
+n=int(input())
+for i in range(n-1):
+    k=[]
+    k.append(l_1[i][0]+l_1[i][1])
+    k.append(l_1[i][0])
+    l_1.append(k)
+result=0    
+for j in l_1[-1]:
+    result+=j
+    
+print(result)
+
+#문제 https://www.acmicpc.net/problem/2193
