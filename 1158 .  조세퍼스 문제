@@ -22,4 +22,4 @@ for i in k:
         print(i,end=", ")
 print('>')
 
-# 문제 https://www.acmicpc.net/submit/1158/8023920
+# 문제 https://www.acmicpc.net/submit/1158
