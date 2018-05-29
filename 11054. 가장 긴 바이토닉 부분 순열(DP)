@@ -1,0 +1,34 @@
+n= int(input())
+l_1=list(map(int,input().split()))
+l_2=l_1[:]
+l_2.reverse()
+dp1=[1]
+dp2=[1]
+
+def kk(l_0,dp0,n0):
+    for i in range(1,n0):
+        k=[]
+        for j in range(i):
+            if l_0[i]>l_0[j]:
+                k.append(dp0[j])
+        
+        if k:
+            dp0.append(max(k)+1)
+            
+        else:
+            dp0.append(1)
+            
+    return dp0
+
+
+a_1=kk(l_1,dp1,n)
+a_2=kk(l_2,dp2,n)
+a_2.reverse()
+a_3=[0]*len(a_1)
+for i in range(len(a_1)):
+    a_3[i]=a_1[i]+a_2[i]
+    
+print(max(a_3)-1)
+    
+    
+ # 문제 https://www.acmicpc.net/submit/11054
