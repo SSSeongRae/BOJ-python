@@ -1,0 +1,64 @@
+n,m = map(int,input().split())
+up=1;down=1;up_re2=0;up_re5=0;down_re2=0;down_re5=0;k=1;down_re22=0;down_re55=0;
+up = n
+down = m
+down_ex = n-m    
+while True:
+    if up >=(2**k):
+        up_re2 = up_re2 + up//(2**k)
+        k+=1
+    else: break
+
+k=1;
+
+while True:
+    if up >=(5**k):
+        up_re5 = up_re5 + up//(5**k)
+        k+=1
+    else: break
+
+k=1;  
+
+while True:
+    if down >=(2**k):
+        down_re2 = down_re2 + down//(2**k)
+        k+=1
+    else: break
+
+k=1;        
+        
+while True:
+    if down >=(5**k):
+        down_re5 = down_re5 + down//(5**k)
+        k+=1
+        
+    else: break
+
+        
+k=1;
+
+while True:
+    if down_ex >=(2**k):
+        down_re22 = down_re22 + down_ex//(2**k)
+        k+=1
+    else: break
+
+k=1;        
+        
+while True:
+    if down_ex >=(5**k):
+        down_re55 = down_re55 + down_ex//(5**k)
+        k+=1
+        
+    else: break
+    
+a_1=(up_re2-down_re2-down_re22)
+a_2=(up_re5-down_re5-down_re55)
+
+if a_1>=a_2:
+    print(a_2)
+else:
+     print(a_1)
+
+
+#문제 https://www.acmicpc.net/submit/2004
