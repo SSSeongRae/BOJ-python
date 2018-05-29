@@ -1,0 +1,16 @@
+n=int(input())
+N=[0]+list(map(int,input().split()))
+Max=[0]
+
+for i in range(n+1):
+    K_1=[]
+    for j in range(i):
+        K_1.append(Max[j]+N[i-j])
+    if K_1==[]:
+        continue
+    else:
+        Max.append((max(K_1)))
+    
+print(max(Max))
+    
+   #문제 https://www.acmicpc.net/submit/11052
