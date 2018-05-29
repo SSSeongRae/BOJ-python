@@ -32,3 +32,5 @@ try:
             else :  print(stack[-1])
 except:
     exit()
+
+# 문제 https://www.acmicpc.net/problem/10828
