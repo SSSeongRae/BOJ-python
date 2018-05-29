@@ -1,0 +1,16 @@
+a_1 = 1
+a_2 = 2
+aa=[]
+aa.append(a_1);aa.append(a_2);
+n = int(input())
+if n ==1:
+    print(a_1)
+elif n==2:
+    print(a_2)
+else :
+    for i in range(n-2):
+        aa.append((aa[i]+aa[i+1]))
+                  
+    print(aa[-1]%10007)
+
+#문제 https://www.acmicpc.net/problem/11726
