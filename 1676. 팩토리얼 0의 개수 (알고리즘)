@@ -1,0 +1,22 @@
+n = int(input())
+result=1
+re_1=0
+for i in range(n):
+    result = result*(i+1)
+    
+result=list(str(result))
+
+if int(result[-1])!=0:
+    
+    re_1=0
+    
+else:
+    
+    while int(result[-1]) == 0:
+            del result[-1]
+            re_1 += 1
+        
+print(re_1)
+        
+        
+      #문제 https://www.acmicpc.net/submit/1676
