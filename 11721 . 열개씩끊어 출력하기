@@ -7,3 +7,5 @@ for i in word:
     if ten == 10:
         print()
         ten=0
+        
+   #문제 https://www.acmicpc.net/problem/11721
