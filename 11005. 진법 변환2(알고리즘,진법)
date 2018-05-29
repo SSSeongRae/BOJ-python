@@ -1,0 +1,131 @@
+n,b=map(int,input().split())
+
+k=[]
+while n//b !=0:
+    a_1=0
+    a_1=n%b
+    
+    n=n//b
+    
+    if a_1>=10:
+        if a_1==10:
+            k=['A']+k
+        elif a_1==11:
+            k=['B']+k
+        elif a_1==12:
+            k=['C']+k
+        elif a_1==13:
+            k=['D']+k
+        elif a_1==14:
+            k=['E']+k
+        elif a_1==15:
+            k=['F']+k
+        elif a_1==16:
+            k=['G']+k
+        elif a_1==17:
+            k=['H']+k
+        elif a_1==18:
+            k=['I']+k
+        elif a_1==19:
+            k=['J']+k
+        elif a_1==20:
+            k=['K']+k
+        elif a_1==21:
+            k=['L']+k
+        elif a_1==22:
+            k=['M']+k
+        elif a_1==23:
+            k=['N']+k
+        elif a_1==24:
+            k=['O']+k
+        elif a_1==25:
+            k=['P']+k
+        elif a_1==26:
+            k=['Q']+k
+        elif a_1==27:
+            k=['R']+k
+        elif a_1==28:
+            k=['S']+k
+        elif a_1==29:
+            k=['T']+k
+        elif a_1==30:
+            k=['U']+k
+        elif a_1==31:
+            k=['V']+k
+        elif a_1==32:
+            k=['W']+k
+        elif a_1==33:
+            k=['X']+k
+        elif a_1==34:
+            k=['Y']+k
+        elif a_1==35:
+            k=['Z']+k
+    else:
+        k=[str(a_1)]+k
+        
+        
+
+a_1=n
+        
+if n==0:
+    pass
+else:
+    if a_1==10:
+        k=['A']+k
+    elif a_1==11:
+        k=['B']+k
+    elif a_1==12:
+        k=['C']+k
+    elif a_1==13:
+        k=['D']+k
+    elif a_1==14:
+        k=['E']+k
+    elif a_1==15:
+        k=['F']+k
+    elif a_1==16:
+        k=['G']+k
+    elif a_1==17:
+        k=['H']+k
+    elif a_1==18:
+        k=['I']+k
+    elif a_1==19:
+        k=['J']+k
+    elif a_1==20:
+        k=['K']+k
+    elif a_1==21:
+        k=['L']+k
+    elif a_1==22:
+        k=['M']+k
+    elif a_1==23:
+        k=['N']+k
+    elif a_1==24:
+        k=['O']+k
+    elif a_1==25:
+        k=['P']+k
+    elif a_1==26:
+        k=['Q']+k
+    elif a_1==27:
+        k=['R']+k
+    elif a_1==28:
+        k=['S']+k
+    elif a_1==29:
+        k=['T']+k
+    elif a_1==30:
+        k=['U']+k
+    elif a_1==31:
+        k=['V']+k
+    elif a_1==32:
+        k=['W']+k
+    elif a_1==33:
+        k=['X']+k
+    elif a_1==34:
+        k=['Y']+k
+    elif a_1==35:
+        k=['Z']+k
+    else:
+        k= [str(n)]+k
+    
+for i in k:
+    print(i,end='')
+
+#문제 https://www.acmicpc.net/problem/11005
