@@ -1,0 +1,42 @@
+import sys
+from collections import deque
+
+def find(L):
+    global N,M,m
+    if 0<=L[0]<N and 0<=L[1]<M:
+        return m[L[0]][L[1]]
+    else:
+        return -1
+
+M,N=map(int,sys.stdin.readline().split())
+m=[list(map(int,sys.stdin.readline().split())) for i in range(N)]
+day=[[0 for x in range(M)]for y in range(N)]
+q=deque()
+count1=0
+test=0
+for i in range(N):
+    for j in range(M):
+        if m[i][j]==1:
+            q+=[[i,j]]
+        elif not m[i][j]:
+            test+=1
+
+while q:
+    A=q.popleft()
+    i,j=A[0],A[1]
+    for i_1,i_2 in (i+1,j),(i-1,j),(i,j-1),(i,j+1):
+        if find([i_1,i_2]):
+            continue
+        m[i_1][i_2]=1
+        day[i_1][i_2]=day[i][j]+1
+        test-=1
+        q+=[[i_1,i_2]]
+
+if test:
+    print(-1)
+else:
+    print(day[i][j])
+        
+
+
+#문제  https://www.acmicpc.net/problem/7576
