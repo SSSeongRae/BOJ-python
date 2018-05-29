@@ -1,0 +1,16 @@
+n=int(input())
+l_1=list(map(int,input().split()))
+dp=[l_1[0]]
+for i in range(1,n):
+    k=[]
+    for j in range(i):
+        if l_1[i]>l_1[j]:
+            k.append(dp[j])
+    if k:
+        dp.append(max(k)+l_1[i])
+    else:
+        dp.append(l_1[i])
+        
+print(max(dp))
+
+#문제 https://www.acmicpc.net/submit/11055
