@@ -1,0 +1,16 @@
+S=list(input())
+result=[]
+for i in S:
+    if i ==' ':
+        result.append(' ')
+    if ord(i)>=48 and ord(i)<=57:
+        result.append(i)
+    elif (ord(i)>=110 and ord(i)<=122) or (ord(i)>=78 and ord(i)<=90):
+        result.append(chr(ord(i)-25+12))
+    elif (ord(i)>=97 and ord(i)<=109) or (ord(i)>=65 and ord(i)<=77):
+        result.append(chr(ord(i)+13))
+        
+        
+print(''.join(result))    
+        
+   # 문제 https://www.acmicpc.net/submit/11655
