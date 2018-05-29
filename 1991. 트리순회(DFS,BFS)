@@ -1,0 +1,38 @@
+Tree={}
+for i in range(int(input())):
+    a,b,c=input().split()
+    Tree[a]=(b,c)
+    
+def front(T,a):
+    if not a=='.':
+        print(a,end='')
+    if not T[a][0]=='.':
+        front(T,T[a][0])
+    if not T[a][1]=='.':
+        front(T,T[a][1])
+def inorder(T,a):
+    if not T[a][0]=='.':
+        inorder(T,T[a][0])
+    if not a=='.':
+        print(a,end='')
+    if not T[a][1]=='.':
+        inorder(T,T[a][1])
+        
+def post(T,a):
+    if not T[a][0]=='.':
+        post(T,T[a][0])
+    if not T[a][1]=='.':
+        post(T,T[a][1])
+    if not a=='.':
+        print(a,end='')
+        
+        
+        
+
+front(Tree,'A')
+print()
+inorder(Tree,'A')
+print()
+post(Tree,'A')
+
+#문제 https://www.acmicpc.net/submit/1991
