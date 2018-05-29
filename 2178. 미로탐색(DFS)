@@ -1,0 +1,47 @@
+import sys
+sys.setrecursionlimit(10**6)
+def find(L):
+    global test,count,number,visit
+    L1=[]
+    if L[0]-1>=0 and m[L[0]-1][L[1]]:
+        L1.append([L[0]-1,L[1]])   
+    if L[1]-1>=0 and m[L[0]][L[1]-1]:
+        L1.append([L[0],L[1]-1])        
+    if L[0]+1<=N-1 and m[L[0]+1][L[1]]:
+        L1.append([L[0]+1,L[1]])        
+    if L[1]+1<=M-1 and m[L[0]][L[1]+1]:
+        L1.append([L[0],L[1]+1])
+    return L1
+
+def bfs(L):
+    global test,count,number,visit
+    if test=='True':
+        if L:
+            L1=[]
+            for i in L:
+                if not visit[i[0]][i[1]]:
+                    visit[i[0]][i[1]]=number
+                    L1+=find([i[0],i[1]])
+            if visit[N-1][M-1]:
+                test='False'
+                return
+            count+=1
+            bfs(L1)
+
+
+    
+    
+
+N,M=map(int,input().split())
+visit=[[0 for i in range(M)] for i in range(N)]
+m=[]
+test='True'
+count=0
+number=2
+Nnumber=-1
+for i in range(N):
+    m.append(list(map(int,input())))
+bfs([[0,0]])
+print(count+1)
+
+# 문제 https://www.acmicpc.net/submit/2178
