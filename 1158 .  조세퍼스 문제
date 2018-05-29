@@ -1,0 +1,25 @@
+a,b=map(int,input().split())
+a_1=list(range(a+1)[1:])
+c=b
+k=[]
+while len(a_1):
+    if c<=len(a_1):
+        k.append(a_1.pop(c-1))
+        c+=b-1
+    else :
+        while c>len(a_1):
+            c= c-len(a_1)
+        
+        k.append(a_1.pop(c-1))
+        c+=b-1
+        
+print('<',end="")
+for i in k:
+    if i==k[-1]:
+        print(i,end="")   
+        
+    else:
+        print(i,end=", ")
+print('>')
+
+# 문제 https://www.acmicpc.net/submit/1158/8023920
