@@ -1,0 +1,10 @@
+l_1=[]
+for i in range(int(input())):
+    l_1.append([int(input()),i])
+
+l_1.sort();l_3=[]
+for j in range(len(l_1)):
+    l_3.append(l_1[j][1]-j)  
+print(max(l_3)+1)
+
+#문제 https://www.acmicpc.net/submit/1377
