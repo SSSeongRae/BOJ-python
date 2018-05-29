@@ -1,0 +1,41 @@
+n= int(input())
+k=[]
+
+for i in range(n):
+    order=list(input().split())
+    if order[0] =='push':
+        k.append(order[1])
+    
+    elif order[0] =='front':
+        if len(k)==0:
+            print(-1)
+            continue
+        else:
+            print(k[0])
+    
+    elif order[0] =='back':
+        if len(k)==0:
+            print(-1)
+            continue
+        else:
+            print(k[-1])
+        
+    
+    elif order[0] =='size':
+        print(len(k))
+    
+    elif order[0] =='empty':
+        if len(k)==0:
+            print(1)
+        else:
+            print(0)
+    
+    elif order[0] =='pop':
+        if len(k)==0:
+            print(-1)
+            continue
+        else:
+            print(k[0])
+            del k[0]
+            
+    # 문제 https://www.acmicpc.net/submit/10845/8137720
