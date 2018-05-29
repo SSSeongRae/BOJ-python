@@ -1,0 +1,51 @@
+import sys
+sys.setrecursionlimit(10**8)
+def dfs(i):
+    global max_value,max_node,cost,visit
+    for i_1 in k[i].keys():
+        if not visit[i_1]:
+            visit[i_1]=1
+            cost[i_1]=k[i][i_1]+cost[i]
+            if cost[i_1]>=max_value:
+                max_value=cost[i_1]
+                max_node=i_1
+            dfs(i_1)
+            
+n=int(input())
+k=[{}for i in range(n+1)]
+cost=[0]*(n+1)
+visit=[0]*(n+1)
+max_node=0
+max_value=0   
+for i in range(1,n+1):
+    l_1=list(map(int,input().split()))
+    i_1=l_1[0]
+    l_1=l_1[1:]
+    a=[]
+    a_1={}
+    for j in l_1:
+        if j==-1:
+            break
+        if not a:
+            a.append(j)
+        else:
+            a.append(j)
+            k[i_1][a[0]]=a[1]
+            a=[]
+
+visit[1]=1  
+dfs(1)
+a_1=max_node
+cost=[0]*(n+1)
+visit=[0]*(n+1)
+max_node=0
+max_value=0
+visit[a_1]=1
+dfs(a_1)
+
+
+
+print(max_value)
+
+
+#문제 https://www.acmicpc.net/submit/1167
