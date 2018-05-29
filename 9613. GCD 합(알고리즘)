@@ -1,0 +1,39 @@
+def kk(n,m):
+    n_2=n
+    m_2=m
+    if n>m:
+        pass
+    elif m>n:
+        m_1=n
+        n=m
+        m=m_1
+        
+    k_1=-1
+    
+    while k_1!=0:
+        k_1=n%m
+        n=m
+        m=k_1
+    
+    return(int(n))
+li_1=[]
+for i in range(int(input())):
+    l_1=input().split()[1:]
+    l_2=l_1[:-1]
+    i_1=1
+    k_1=0
+    for j in l_2:
+        
+        for k in l_1[i_1:]:
+            li_1.append(kk(int(k),int(j)))
+        
+        i_1+=1
+        
+    for p_1 in li_1:
+        k_1+=p_1
+        
+    print(k_1)
+   
+    li_1=[]   
+            
+ #문제 https://www.acmicpc.net/submit/9613
