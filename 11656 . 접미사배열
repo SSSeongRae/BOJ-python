@@ -1,0 +1,10 @@
+n=list(input())
+k=[]
+for i in range(len(n)):
+        k.append(n[i:])
+
+k.sort()
+for i in k:
+    print(''.join(i))
+
+# 문제 . https://www.acmicpc.net/problem/11656
