@@ -1,0 +1,37 @@
+import sys
+l_list=list(sys.stdin.readline().strip())
+r_list=[]
+
+
+def L():
+    if l_list:
+        r_list.append(l_list.pop())
+        
+
+def D():
+    if r_list:
+        l_list.append(r_list.pop())
+    
+def B():
+    if l_list:
+        l_list.pop()
+    
+def P(x):
+    l_list.append(x)
+    
+for i in range(int(sys.stdin.readline().strip())):
+    k_1=sys.stdin.readline().strip().split()
+    if k_1[0]=='L':
+        L()
+    if k_1[0]=='D':
+        D()
+    if k_1[0]=='B':
+        B()
+    if k_1[0]=='P':
+        P(k_1[1])
+        
+print(''.join(l_list),end="")
+r_list.reverse()
+print(''.join(r_list),end='')
+    
+   # 문제 https://www.acmicpc.net/submit/1406/8199558
