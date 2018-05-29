@@ -1,0 +1,106 @@
+from collections import deque
+
+def numbering(L):
+    global q,number,v_n,result,test,k
+    q+=L
+    while q:
+        A=q.popleft()
+        i,j=A[0],A[1]
+        for i_1,i_2 in (i-1,j),(i+1,j),(i,j-1),(i,j+1):
+            if 0<=i_1<n and 0<=i_2<n and M[i_1][i_2] and not v_n[i_1][i_2]:
+                v_n[i_1][i_2]=number
+                k+=[[i_1,i_2]]
+                q+=[[i_1,i_2]]
+        
+def bfs(L):
+    global number,v_n,count,n,result,test
+    L1=deque()
+    while L or L1:
+        while L:
+            A=L.popleft()
+            i,j=A[0],A[1]
+            for i_1,i_2 in (i-1,j),(i+1,j),(i,j-1),(i,j+1):
+                if 0<=i_1<n and 0<=i_2<n and not v_n[i_1][i_2]: # 칠하기
+                    v_n[i_1][i_2]=v_n[i][j]
+                    L1+=[[i_1,i_2]]
+                elif 0<=i_1<n and 0<=i_2<n and v_n[i_1][i_2] ==v_n[i][j]: # 같은넘버 
+                    continue
+                elif 0<=i_1<n and 0<=i_2<n and  v_n[i_1][i_2] <v_n[i][j]: #다른넘버
+                    result=min(result,1)
+                    test='end'
+                elif 0<=i_1<n and 0<=i_2<n and v_n[i_1][i_2] >v_n[i][j]:
+                    result=min(result,0)
+                    test='end'
+
+        if test=='end':
+            return
+        else:
+            count+=2 
+     
+        while L1:
+            
+            A=L1.popleft()
+            i,j=A[0],A[1]
+            for i_1,i_2 in (i-1,j),(i+1,j),(i,j-1),(i,j+1):
+                if 0<=i_1<n and 0<=i_2<n and not v_n[i_1][i_2]: # 칠하기
+                    v_n[i_1][i_2]=v_n[i][j]
+                    L+=[[i_1,i_2]]
+                elif 0<=i_1<n and 0<=i_2<n and v_n[i_1][i_2] ==v_n[i][j]: # 같은넘버 
+                    continue
+                elif 0<=i_1<n and 0<=i_2<n and v_n[i_1][i_2] <v_n[i][j]: #다른넘버
+                    result=min(result,1)
+                    test='end'
+                elif 0<=i_1<n and 0<=i_2<n and v_n[i_1][i_2] >v_n[i][j]:
+                    result=min(result,0)
+                    test='end'
+                    
+        if test=='end':
+            return
+        else:
+            count+=2 
+     
+
+        
+        
+def find(L):
+    global n,M,v_n
+    if 0<=L[0]<n and 0<=L[1]<n and not v_n[L[0]][L[1]] :
+        return M[L[0]][L[1]]        
+    else:
+        return -1
+    
+    
+q=deque()
+test=1
+n=int(input())
+number=1
+M=[list(map(int,input().split()))for i in range(n)]
+v_n=[[0 for i in range(n)] for i in range(n)]
+count=0
+result=1000
+collect=deque()
+# 단지이름붙이기
+for i in range(n):
+    for j in range(n):
+        k=[]
+        if M[i][j] and not v_n[i][j]:
+            v_n[i][j]=number
+            k+=[[i,j]]
+            numbering([[i,j]])
+            for _ in k:
+                collect.append(_)
+            number+=1           
+
+bfs(collect)
+if n==1 or number==1 or number==2:
+    print(0)
+else:
+    if result==0 or result==1:
+        print(count+result)
+    else:
+        print(count)
+            
+
+
+
+#문제 https://www.acmicpc.net/problem/2146
