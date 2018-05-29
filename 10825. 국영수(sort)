@@ -1,0 +1,15 @@
+n=int(input())
+list_1=[]
+for i in range(n):
+    name,lan,eng,math=input().split()
+    list_1.append([name,int(lan),int(eng),int(math)])
+    
+list_1=sorted(list_1,key=lambda x:x[0])
+list_1=sorted(list_1,key=lambda x:x[3],reverse=True)
+list_1=sorted(list_1,key=lambda x:x[2])
+list_1=sorted(list_1,key=lambda x:x[1],reverse=True)
+for i in list_1:
+    print(i[0])
+    
+    
+  #문제 https://www.acmicpc.net/submit/10825
