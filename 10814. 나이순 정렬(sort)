@@ -1,0 +1,15 @@
+n=int(input())
+k=[]
+for i in range(n):
+    n_1,m_1=input().split()
+    k.append([int(n_1),m_1,i])
+    
+def f(k):
+    return (k[0],k[2])
+
+k=sorted(k,key=f)
+
+for i in range(len(k)):
+    print(str(k[i][0])+" "+k[i][1])
+    
+#문제 https://www.acmicpc.net/submit/10814
