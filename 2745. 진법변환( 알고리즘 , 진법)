@@ -1,0 +1,14 @@
+N,B = input().split()
+result=0
+N_1=len(list(N))-1
+for i in list(N):
+    if ord(i)>=48 and ord(i)<=57:
+        result+=int(i)*(pow(int(B),N_1))
+        N_1-=1
+    else:
+        result+=(ord(i)-55)*(pow(int(B),N_1))
+        N_1-=1
+        
+print(result)
+
+#문제 https://www.acmicpc.net/submit/2745
