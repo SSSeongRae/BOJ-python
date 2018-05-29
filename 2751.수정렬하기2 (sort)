@@ -1,0 +1,13 @@
+import sys
+k=[]
+a=int(sys.stdin.readline().rstrip())
+for i in range(a):
+    a_1=int(sys.stdin.readline().rstrip())
+    k.append(a_1)
+    
+k.sort()
+
+for i in k:
+    print(i)
+    
+ #문제 https://www.acmicpc.net/submit/2751
