@@ -1,0 +1,5 @@
+a=input()
+for i in range(97,123):
+    print(a.find(chr(i)),end=" ")
+    
+    # 문제 https://www.acmicpc.net/submit/10809 
