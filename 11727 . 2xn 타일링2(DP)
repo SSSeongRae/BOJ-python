@@ -1,0 +1,15 @@
+# a_1 = 1 ,a_2 = 3 a_3 = 5      2*a_n-2+a_n-1=a_n
+k=[1,3]
+n=int(input())
+for i in range(n):
+    if i==0 or i==1:
+        continue
+    else:
+        k.append(k[i-2]*2+k[i-1])
+    
+if n ==1:
+    print(1)
+else:
+    print(k[-1]%10007)
+    
+# 문제  https://www.acmicpc.net/problem/11727
