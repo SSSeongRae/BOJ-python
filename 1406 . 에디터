@@ -34,4 +34,4 @@ print(''.join(l_list),end="")
 r_list.reverse()
 print(''.join(r_list),end='')
     
-   # 문제 https://www.acmicpc.net/submit/1406/8199558
+   # 문제 https://www.acmicpc.net/submit/1406
