@@ -1,0 +1,30 @@
+# 지나왓던 목록 = 리스트
+def go(list_1,start):
+    result1=[]
+    nex=list_1[start-1][1]
+    result1.append(nex)
+    while start!=nex:
+        nex=list_1[nex-1][1]
+        result1.append(nex)
+    return result1
+
+
+for i in range(int(input())):
+    n=int(input())
+    m1=list(map(int,input().split()))
+    m=[]    
+    for i_2 in range(len(m1)):
+        m.append([i_2+1,m1[i_2]])
+    result=[0]*(n+1)
+    count=0
+    for i_3 in range(1,len(m1)+1):
+        if result[i_3]==0:
+            for ii in go(m,i_3):
+                result[ii]=1
+            count+=1
+        else:
+            continue
+
+    print(count)
+
+#문제 https://www.acmicpc.net/problem/10451
