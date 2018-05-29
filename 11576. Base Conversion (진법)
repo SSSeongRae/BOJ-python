@@ -1,0 +1,20 @@
+A,B=map(int,input().split())
+num=int(input())
+l_1=list(map(int,input().split()))
+l_1.reverse()
+i_1=0
+result1=0
+for i in l_1:
+    result1+=i*pow(A,i_1)
+    i_1+=1
+k=[]
+
+while result1//B!=0:
+    k.append(str(result1%B))
+    result1=result1//B
+    
+k.append(str(result1))
+k.reverse()
+print(' '.join(k))
+    
+#문제 https://www.acmicpc.net/problem/11576
