@@ -38,4 +38,4 @@ for i in range(n):
             print(k[0])
             del k[0]
             
-    # 문제 https://www.acmicpc.net/submit/10845/8137720
+    # 문제 https://www.acmicpc.net/submit/10845
