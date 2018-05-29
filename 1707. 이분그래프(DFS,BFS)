@@ -1,0 +1,61 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+def dfs1(i):
+    global M,visit,Test
+    visit[i]=1
+    for j in M[i]:
+        if Test=='False':
+            return
+        else:
+            if visit[j]==1:
+                Test='False'
+                return
+            elif visit[j]==2:
+                continue
+            elif visit[j]==0:
+                dfs2(j)
+
+def dfs2(i):
+    global M,visit,Test
+    visit[i]=2
+    for j in M[i]:
+        if Test=='False':
+            return
+        else:
+            if visit[j]==2:
+                Test='False'
+                return
+            elif visit[j]==1:
+                continue        
+            elif visit[j]==0:
+                dfs1(j)
+
+for i in range(int(sys.stdin.readline())):
+    V,E=map(int,sys.stdin.readline().split())
+    Test ='True'
+    M=[[0]]*(V+1)
+    visit=[-1]+[0]*(V)
+    for ii in range(E):
+        a,b=map(int,sys.stdin.readline().split())
+        if M[a]==[0]:
+            M[a]=[b]
+        else:
+            M[a].append(b)
+        if M[b]==[0]:
+            M[b]=[a]
+        else:
+            M[b].append(a)
+            
+    for i_1 in range(1,V+1):
+        if visit[i_1]==0:
+            dfs1(i_1)
+        else:
+            continue
+    if Test=='False':
+        print('NO')
+    elif Test=='True':
+        print('YES')
+        
+        
+    #문제 https://www.acmicpc.net/submit/1707
