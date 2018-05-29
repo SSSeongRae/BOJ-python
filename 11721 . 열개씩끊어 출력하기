@@ -1,0 +1,9 @@
+word = input()
+ten = 0
+for i in word:
+    print(i,end="")
+    ten +=1
+    
+    if ten == 10:
+        print()
+        ten=0
