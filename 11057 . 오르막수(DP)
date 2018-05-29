@@ -1,0 +1,16 @@
+n=int(input())
+l_1=[[1,1,1,1,1,1,1,1,1,1]]
+for i in range(n-1):
+    k=[]
+    a=0
+    for j in range(10):
+        a+=l_1[i][j]
+        k.append(a)
+    l_1.append(k)
+result=0    
+for i in l_1[n-1]:
+    result+=i
+    
+print(result%10007)
+
+#문제 https://www.acmicpc.net/submit/11057
