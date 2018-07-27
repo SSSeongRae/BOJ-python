@@ -1,0 +1,54 @@
+
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String[] arr =  sc.nextLine().split(" ");
+	double N= Integer.parseInt(arr[0]);
+	double M= Integer.parseInt(arr[1]);
+	double K= Integer.parseInt(arr[2]);
+	int pivot = (int)K; // 지금까지 출력한것
+	int pivot1 = (int)K;
+	int a_1 = 0; //이제 할것
+	if (M*K<N|| M+K-1>N) {
+		System.out.println(-1);
+		}
+	else {
+		// 최대 감소수열 해결
+		for(double i=K;i>0;i--) {
+			System.out.print((int)i+" ");
+			}
+		//System.out.println(" ");
+		int set=(int)M-1; // 나머지 집합수
+		a_1=(int)K+(int)Math.floor((N-K)/set);
+		int k_1=(int)Math.floor((N-K)/set);//통상숫자
+	//	System.out.println(" k_1 = " + k_1);
+		int set1=set;
+		for (int j=0; j<set1-1 ; j++ ) {
+			pivot1=a_1;
+			for(;pivot<a_1;a_1--) {
+				System.out.print(a_1+" ");			
+			}
+			//System.out.println(" ");
+			pivot=pivot1;
+			a_1=pivot1;
+			set-=1;
+			if((double)(((double)N-(double)pivot)/(double)k_1)>set) {
+				a_1+=k_1+1;				
+			}
+			else {
+				a_1+=k_1;
+			}
+			//System.out.println("j = "+ j + " set = " + set + " a_1 = " + a_1 + " pivot = " + pivot   );
+		}
+		
+		for(;N>pivot;N--) {
+			System.out.print((int)N+" ");
+		}
+		
+		}
+	
+	}
+}
